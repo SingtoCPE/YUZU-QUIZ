@@ -53,9 +53,7 @@
       <v-list>
         <v-list-item @click.native="right = !right">
           <v-list-item-action>
-            <v-icon light>
-              mdi-repeat
-            </v-icon>
+            <v-icon light> mdi-repeat </v-icon>
           </v-list-item-action>
           <v-list-item-title>Switch drawer (click me)</v-list-item-title>
         </v-list-item>
@@ -76,21 +74,26 @@ export default {
       fixed: false,
       items: [
         {
+          icon: "mdi-chart-bubble",
+          title: "Employee",
+          to: "/Employee",
+        },
+        {
           icon: "mdi-battlenet",
           title: "Resume",
-          to: "/Resume"
+          to: "/Resume",
         },
         {
           icon: "mdi-chart-bubble",
           title: "Inspire",
-          to: "/inspire"
-        }
+          to: "/inspire",
+        },
       ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: "Yuzu Digital Solution"
+      title: "Yuzu Digital Solution",
     };
-  }
+  },
 };
 </script>
