@@ -6,8 +6,11 @@
     outlined
   >
     <v-card-actions>
-      <v-btn id="new-button" color="grey lighten-1" width="115px">
-        <v-icon small> mdi-plus </v-icon>New
+      <v-btn dark id="new-button" color="red" width="115px">
+        <v-icon class="mr-1"> mdi-minus-circle </v-icon>Delete
+      </v-btn>
+      <v-btn dark id="new-button" color="green" width="115px">
+        <v-icon class="mr-1"> mdi-plus-circle </v-icon>New
       </v-btn>
     </v-card-actions>
   </v-card>

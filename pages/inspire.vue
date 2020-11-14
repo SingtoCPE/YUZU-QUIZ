@@ -1,21 +1,59 @@
 <template>
-  <v-row>
-    <v-col v-for="n in 9" :key="n" class="d-flex child-flex" cols="4">
-      <v-img
-        :src="`https://picsum.photos/500/300?image=${n * 5 + 10}`"
-        :lazy-src="`https://picsum.photos/10/6?image=${n * 5 + 10}`"
-        aspect-ratio="1"
-        class="grey lighten-2"
+  <div class="container">
+    <div>
+      <v-btn @click="addImg"><v-icon>mdi-plus</v-icon></v-btn>
+      <v-btn @click="reduceImg"><v-icon>mdi-minus</v-icon></v-btn>
+      <v-btn @click="addSizeImg"><v-icon>mdi-magnify-plus</v-icon></v-btn>
+      <v-btn @click="reduceSizeImg"><v-icon>mdi-magnify-minus</v-icon></v-btn>
+    </div>
+    <v-row>
+      <v-col
+        v-for="n in countImg"
+        :key="n"
+        class="d-flex child-flex"
+        :cols="countSizeImg"
       >
-        <template v-slot:placeholder>
-          <v-row class="fill-height ma-0" align="center" justify="center">
-            <v-progress-circular
-              indeterminate
-              color="grey lighten-5"
-            ></v-progress-circular>
-          </v-row>
-        </template>
-      </v-img>
-    </v-col>
-  </v-row>
+        <v-card elevation="5">
+          <v-img
+            :src="`https://picsum.photos/1920/1080?random?image=${n * 5 + 10}`"
+            aspect-ratio="1"
+          >
+          </v-img>
+        </v-card>
+      </v-col>
+    </v-row>
+  </div>
 </template>
+<script>
+export default {
+  name: "inspire",
+  data() {
+    return {
+      countImg: 3,
+      countSizeImg: 4,
+    };
+  },
+  methods: {
+    addImg() {
+      this.countImg += 1;
+    },
+    reduceImg() {
+      this.countImg -= 1;
+    },
+    addSizeImg() {
+      if (this.countSizeImg == 12) {
+        this.countSizeImg += 0;
+      } else {
+        this.countSizeImg += 1;
+      }
+    },
+    reduceSizeImg() {
+      if (this.countSizeImg == 1) {
+        this.countSizeImg -= 0;
+      } else {
+        this.countSizeImg -= 1;
+      }
+    },
+  },
+};
+</script>

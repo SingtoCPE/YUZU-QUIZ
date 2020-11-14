@@ -38,10 +38,6 @@
       </v-btn>
       <v-toolbar-title v-text="title" />
       <img class="ml-2" src="@/assets/logo1.png" alt="" width="30" />
-      <v-spacer />
-      <v-btn icon @click.stop="rightDrawer = !rightDrawer">
-        <v-icon>mdi-menu</v-icon>
-      </v-btn>
     </v-app-bar>
 
     <v-main>
@@ -49,16 +45,7 @@
         <nuxt />
       </v-container>
     </v-main>
-    <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
-      <v-list>
-        <v-list-item @click.native="right = !right">
-          <v-list-item-action>
-            <v-icon light> mdi-repeat </v-icon>
-          </v-list-item-action>
-          <v-list-item-title>Switch drawer (click me)</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
+
     <v-footer :absolute="!fixed" app>
       <span>&copy; {{ new Date().getFullYear() }}</span>
     </v-footer>
@@ -75,16 +62,26 @@ export default {
       items: [
         {
           icon: "mdi-chart-bubble",
+          title: "Dashboard",
+          to: "/",
+        },
+        {
+          icon: "mdi-account-tie",
           title: "Employee",
           to: "/Employee",
         },
         {
-          icon: "mdi-battlenet",
+          icon: "mdi-account-group",
+          title: "Department",
+          to: "/department",
+        },
+        {
+          icon: "mdi-feather",
           title: "Resume",
           to: "/Resume",
         },
         {
-          icon: "mdi-chart-bubble",
+          icon: "mdi-sprout",
           title: "Inspire",
           to: "/inspire",
         },
