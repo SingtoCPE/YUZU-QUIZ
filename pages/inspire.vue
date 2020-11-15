@@ -1,10 +1,13 @@
 <template>
   <div class="container">
     <div>
-      <v-btn @click="addImg"><v-icon>mdi-plus</v-icon></v-btn>
-      <v-btn @click="reduceImg"><v-icon>mdi-minus</v-icon></v-btn>
-      <v-btn @click="addSizeImg"><v-icon>mdi-magnify-plus</v-icon></v-btn>
-      <v-btn @click="reduceSizeImg"><v-icon>mdi-magnify-minus</v-icon></v-btn>
+      <v-btn dark @click="addImg"><v-icon>mdi-plus</v-icon></v-btn>
+      <v-btn dark @click="reduceImg"><v-icon>mdi-minus</v-icon></v-btn>
+      <v-btn dark @click="addSizeImg"><v-icon>mdi-magnify-plus</v-icon></v-btn>
+      <v-btn dark @click="reduceSizeImg"
+        ><v-icon>mdi-magnify-minus</v-icon></v-btn
+      >
+      <v-btn dark @click="randomImg"><v-icon>mdi-reload</v-icon></v-btn>
     </div>
     <v-row>
       <v-col
@@ -61,6 +64,9 @@ export default {
       } else {
         this.countSizeImg -= 1;
       }
+    },
+    randomImg() {
+      this.$router.go(0);
     },
   },
 };

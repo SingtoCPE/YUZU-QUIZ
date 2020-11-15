@@ -1,7 +1,9 @@
 <template>
   <div class="container">
-    <v-btn @click="addSizeImg"><v-icon>mdi-magnify-plus</v-icon></v-btn>
-    <v-btn @click="reduceSizeImg"><v-icon>mdi-magnify-minus</v-icon></v-btn>
+    <v-btn dark @click="addSizeImg"><v-icon>mdi-magnify-plus</v-icon></v-btn>
+    <v-btn dark @click="reduceSizeImg"
+      ><v-icon>mdi-magnify-minus</v-icon></v-btn
+    >
     <div class="container d-flex justify-center align-center">
       <v-row class="d-flex justify-center align-center pt-1">
         <v-col class="d-flex justify-center align-center">

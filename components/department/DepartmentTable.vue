@@ -33,17 +33,17 @@ export default {
           class: "grey lighten-3",
         },
         {
-          text: "Department Name",
-          align: "left",
-          sortable: false,
-          value: "department_name",
-          class: "grey lighten-3",
-        },
-        {
           text: "Department Code",
           align: "left",
           sortable: false,
           value: "department_id",
+          class: "grey lighten-3",
+        },
+        {
+          text: "Department Name",
+          align: "left",
+          sortable: false,
+          value: "department_name",
           class: "grey lighten-3",
         },
         {

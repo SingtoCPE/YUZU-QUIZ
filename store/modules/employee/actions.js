@@ -18,7 +18,7 @@ const actions = {
                 email, 
                 address, 
                 phone, 
-                department_id: department
+                department_code: department
             },
         })
         dispatch('getEmployee')
@@ -34,7 +34,7 @@ const actions = {
                 email, 
                 address, 
                 phone, 
-                department_id: department
+                department_code: department
             },
         })
         dispatch('getEmployee')

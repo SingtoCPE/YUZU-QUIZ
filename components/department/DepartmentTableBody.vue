@@ -3,8 +3,8 @@
   <tbody>
     <tr v-for="(item, index) in items" :key="item.department_id">
       <td>{{ index + 1 }}</td>
+      <td>{{ item.department_code }}</td>
       <td>{{ item.department_name }}</td>
-      <td>{{ item.department_id }}</td>
       <td>
         <div class="d-flex justify-center">
           <v-btn

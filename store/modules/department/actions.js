@@ -9,6 +9,17 @@ const actions = {
         commit('setDepartmentList', data.map(data => data))
     },
 
+    async createDepartment({_, dispatch}, department_id){
+        await axios({
+            method: 'post',
+            url: 'http://localhost:3001/department/create',
+            data: {
+                department_id,
+            },
+        })
+        dispatch('getDepartment')
+    },
+
     async deleteDepartment({_, dispatch}, department_id){
         await axios({
             method: 'post',
