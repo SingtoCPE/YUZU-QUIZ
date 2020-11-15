@@ -1,54 +1,78 @@
 <template>
   <div class="px-3">
-    <v-text-field
-      v-model="employeeInput.employeeName"
-      prepend-inner-icon="mdi-alpha-n-circle"
-      clearable
-      dense
-      label="Name *"
-      outlined
-      required
-    />
+    <ValidationProvider name="Name" :rules="{ required: true, max: 100 }">
+      <v-text-field
+        v-model="employeeInput.employeeName"
+        slot-scope="{ errors }"
+        prepend-inner-icon="mdi-alpha-n-circle"
+        clearable
+        dense
+        label="Name *"
+        outlined
+        required
+        :error-messages="errors"
+        :counter="100"
+      />
+    </ValidationProvider>
 
-    <v-text-field
-      v-model="employeeInput.email"
-      prepend-inner-icon="mdi-email-newsletter"
-      clearable
-      dense
-      label="Email*"
-      outlined
-      required
-    />
+    <ValidationProvider name="Email" :rules="{ required: true, max: 45 }">
+      <v-text-field
+        v-model="employeeInput.email"
+        slot-scope="{ errors }"
+        prepend-inner-icon="mdi-email-newsletter"
+        clearable
+        dense
+        label="Email*"
+        outlined
+        required
+        :error-messages="errors"
+        :counter="45"
+      />
+    </ValidationProvider>
 
-    <v-text-field
-      v-model="employeeInput.address"
-      prepend-inner-icon="mdi-map-marker"
-      clearable
-      dense
-      label="Address"
-      outlined
-      required
-    />
+    <ValidationProvider name="Address" :rules="{ max: 255 }">
+      <v-text-field
+        v-model="employeeInput.address"
+        slot-scope="{ errors }"
+        prepend-inner-icon="mdi-map-marker"
+        clearable
+        dense
+        label="Address"
+        outlined
+        required
+        :error-messages="errors"
+        :counter="255"
+      />
+    </ValidationProvider>
 
-    <v-text-field
-      v-model="employeeInput.phone"
-      prepend-inner-icon="mdi-phone"
-      clearable
-      dense
-      label="Phone"
-      outlined
-    />
+    <ValidationProvider name="Phone" :rules="{ max: 10 }">
+      <v-text-field
+        v-model="employeeInput.phone"
+        slot-scope="{ errors }"
+        prepend-inner-icon="mdi-phone"
+        clearable
+        dense
+        label="Phone"
+        outlined
+        :error-messages="errors"
+        :counter="10"
+      />
+    </ValidationProvider>
 
-    <v-select
-      v-model="employeeInput.department"
-      prepend-inner-icon="mdi-account-group"
-      :items="departmentItems"
-      item-text="departmentName"
-      item-value="value"
-      label="Department *"
-      outlined
-      dense
-    ></v-select>
+    <ValidationProvider name="Department" :rules="{ required: true }">
+      <v-select
+        v-model="employeeInput.department"
+        slot-scope="{ errors }"
+        prepend-inner-icon="mdi-account-group"
+        :items="departmentItems"
+        item-text="departmentName"
+        item-value="value"
+        label="Department *"
+        outlined
+        dense
+        :error-messages="errors"
+      ></v-select>
+    </ValidationProvider>
     <span class="amber accent-1">
       <v-icon size="20px">mdi-alert-rhombus</v-icon>Fields with * require
       information to be filled in
@@ -56,8 +80,12 @@
   </div>
 </template>
 <script>
+import { ValidationProvider } from "vee-validate/dist/vee-validate.full";
 export default {
   name: "EmployeeForm",
+  components: {
+    ValidationProvider: ValidationProvider,
+  },
   props: {
     isClearInput: {
       type: Boolean,
@@ -126,7 +154,7 @@ export default {
         this.employeeInput.email = this.employeeUpdateItem.email;
         this.employeeInput.address = this.employeeUpdateItem.address;
         this.employeeInput.phone = this.employeeUpdateItem.phone;
-        this.employeeInput.department = this.employeeUpdateItem.department;
+        this.employeeInput.departmentItems = this.employeeUpdateItem.department;
       }
     },
   },

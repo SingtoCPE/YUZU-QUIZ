@@ -1,4 +1,4 @@
-import colors from "vuetify/es5/util/colors";
+import { ValidationObserver, ValidationProvider } from "vee-validate";
 
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
@@ -15,10 +15,18 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [],
-
-  // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
+  components: {
+    ValidationObserver,
+    ValidationProvider
+  },
   plugins: [
+    "~/plugins/vee-validate.js"
   ],
+  build: {
+    transpile: ["vee-validate/dist/rules"],
+  },
+  // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
+  plugins: [],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,

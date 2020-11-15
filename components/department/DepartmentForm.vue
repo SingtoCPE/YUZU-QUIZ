@@ -1,24 +1,40 @@
 <template>
   <div class="px-3">
-    <v-text-field
-      v-model="departmentInput.departmentName"
-      prepend-inner-icon="mdi-alpha-n-circle"
-      clearable
-      dense
-      label="Department Name *"
-      outlined
-      required
-    />
+    <ValidationProvider
+      name="Department Name"
+      :rules="{ required: true, max: 100 }"
+    >
+      <v-text-field
+        v-model="departmentInput.departmentName"
+        slot-scope="{ errors }"
+        prepend-inner-icon="mdi-alpha-n-circle"
+        clearable
+        dense
+        label="Department Name *"
+        outlined
+        required
+        :error-messages="errors"
+        :counter="100"
+      />
+    </ValidationProvider>
 
-    <v-text-field
-      v-model="departmentInput.departmentCode"
-      prepend-inner-icon="mdi-alpha-c-circle"
-      clearable
-      dense
-      label="Department Code*"
-      outlined
-      required
-    />
+    <ValidationProvider
+      name="Department Code"
+      :rules="{ required: true, max: 4 }"
+    >
+      <v-text-field
+        v-model="departmentInput.departmentCode"
+        slot-scope="{ errors }"
+        prepend-inner-icon="mdi-alpha-c-circle"
+        clearable
+        dense
+        label="Department Code*"
+        outlined
+        required
+        :error-messages="errors"
+        :counter="4"
+      />
+    </ValidationProvider>
 
     <span class="amber accent-1">
       <v-icon size="20px">mdi-alert-rhombus</v-icon>Fields with * require
@@ -27,7 +43,11 @@
   </div>
 </template>
 <script>
+import { ValidationProvider } from "vee-validate/dist/vee-validate.full";
 export default {
+  components: {
+    ValidationProvider: ValidationProvider,
+  },
   props: {
     isClearInput: {
       type: Boolean,

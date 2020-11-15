@@ -1,6 +1,14 @@
 import { extend } from "vee-validate";
 import { required } from "vee-validate/dist/rules";
-extend("required", {
+extend('required', {
   ...required,
-  message: "This field is required or your custom error message"
+  message: '{_field_} is required',
+});
+extend('requiredSelect', {
+  ...required,
+  message: '{_field_} is required',
+});
+extend('max', {
+  ...max,
+  message: '{_field_} may not be greater than {length}',
 });
