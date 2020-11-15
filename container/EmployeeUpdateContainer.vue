@@ -1,7 +1,7 @@
 <template>
   <v-dialog
     v-model="isDialogUpdateEmployee"
-    width="650px"
+    width="500px"
     persistent
     :retain-focus="false"
   >
@@ -43,7 +43,6 @@ export default {
   name: "EmployeeUpdateContainer",
   data: () => ({
     employeePayload: {},
-    isClearInput: false,
     employeeUpdateItem: {
       employeeName: "",
       email: "",
@@ -83,27 +82,19 @@ export default {
     updateEmployee() {
       this.$store.dispatch("employee/updateEmployee", this.employeePayload);
     },
-    setCustomerItem() {
+    setEmployeeItem() {
       this.employeePayload = {
         ...this.employeePayload,
         employee_id: this.idEmployeeUpdate,
       };
-      console.log(this.employeePayload);
     },
     onSubmit() {
-      this.setCustomerItem();
+      this.setEmployeeItem();
       this.updateEmployee();
-      this.clearInput();
+      this.closeDialog();
     },
     closeDialog() {
       this.$store.commit("employee/setIsDialogUpdateEmployee", false);
-    },
-    clearInput() {
-      this.isClearInput = true;
-      this.closeDialog();
-    },
-    resetIsClearInput() {
-      this.isClearInput = false;
     },
   },
 };

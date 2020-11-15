@@ -8,6 +8,7 @@
       <td>
         <div class="d-flex justify-center">
           <v-btn
+            @click="openDialogUpdateDepartment(item.department_id)"
             depressed
             small
             width="40"
@@ -57,6 +58,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import ButtonSlot from "../slot/ButtonSlot.vue";
 export default {
   name: "DepartmentTableBody",
@@ -69,10 +71,22 @@ export default {
   },
   data: () => ({
     idDepartmentDelete: null,
+    departmentItem: "",
     nameDepartmentDelete: "",
     isDialogAlert: false,
   }),
+  computed: mapState({
+    departmentList: (state) => state.department.departmentList,
+  }),
   methods: {
+    openDialogUpdateDepartment(departmentId) {
+      this.departmentItem = this.departmentList.find(
+        (departmentItem) => departmentItem.department_id === departmentId
+      );
+      this.$store.commit("department/setDepartmentItem", this.departmentItem);
+      this.$store.commit("department/setIdDepartmentUpdate", departmentId);
+      this.$store.commit("department/setIsDialogUpdateDepartment", true);
+    },
     openDialogDeleteDepartment(departmentId, departmentName) {
       this.idDepartmentDelete = departmentId;
       this.nameDepartmentDelete = departmentName;

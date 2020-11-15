@@ -1,7 +1,7 @@
 <template>
   <v-dialog
     v-model="isDialogCreateDepartment"
-    width="650px"
+    width="500px"
     persistent
     :retain-focus="false"
   >

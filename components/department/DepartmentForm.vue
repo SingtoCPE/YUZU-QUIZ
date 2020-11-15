@@ -33,6 +33,16 @@ export default {
       type: Boolean,
       default: false,
     },
+    departmentUpdateItem: {
+      type: Object,
+      default: () => ({
+        employeeName: "",
+        email: "",
+        address: "",
+        phone: "",
+        department: "",
+      }),
+    },
   },
   data: () => ({
     departmentInput: {
@@ -58,10 +68,19 @@ export default {
       immediate: true,
     },
   },
+  created() {
+    this.setDepartmentInput();
+  },
   methods: {
     clearForm() {
       this.departmentInput.departmentName = "";
       this.departmentInput.departmentCode = "";
+    },
+    setDepartmentInput() {
+      if (this.departmentUpdateItem) {
+        this.departmentInput.departmentName = this.departmentUpdateItem.departmentName;
+        this.departmentInput.departmentCode = this.departmentUpdateItem.departmentCode;
+      }
     },
   },
 };

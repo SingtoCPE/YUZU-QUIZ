@@ -2,15 +2,18 @@ const mutations = {
     setDepartmentList(state, departmentList){
         state.departmentList = departmentList
     },
+    setDepartmentItem(state, departmentItem){
+        state.departmentItem = departmentItem
+    }, 
+    setIdDepartmentUpdate(state, idDepartmentUpdate){
+        state.idDepartmentUpdate = idDepartmentUpdate
+    },
     setIsDialogCreateDepartment(state, isDialogCreateDepartment){
         state.isDialogCreateDepartment = isDialogCreateDepartment
     },   
     setIsDialogUpdateDepartment(state, isDialogUpdateDepartment){
         state.isDialogUpdateDepartment = isDialogUpdateDepartment
     },
-    setIsDialogAlert(state, isDialogAlert){
-        state.isDialogAlert = isDialogAlert
-    }
 }
 
 export default mutations;

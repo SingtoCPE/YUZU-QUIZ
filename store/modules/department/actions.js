@@ -21,6 +21,19 @@ const actions = {
         dispatch('getDepartment')
     },
 
+    async updateDepartment({_, dispatch}, {department_id, departmentName, departmentCode}){
+        await axios({
+            method: 'post',
+            url: 'http://localhost:3001/department/update',
+            data: {
+                department_id,
+                department_name: departmentName,
+                department_code: departmentCode
+            },
+        })
+        dispatch('getDepartment')
+    },
+
     async deleteDepartment({_, dispatch}, department_id){
         await axios({
             method: 'post',

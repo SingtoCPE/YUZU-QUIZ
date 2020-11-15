@@ -16,13 +16,15 @@
       </v-btn>
     </v-card-actions>
     <department-create-container />
+    <department-update-container />
   </v-card>
 </template>
 <script>
 import DepartmentCreateContainer from "@/container/DepartmentCreateContainer.vue";
+import DepartmentUpdateContainer from "@/container/DepartmentUpdateContainer.vue";
 export default {
   name: "DepartmentTableHeader",
-  components: { DepartmentCreateContainer },
+  components: { DepartmentCreateContainer, DepartmentUpdateContainer },
   methods: {
     openDialogCreateDepartment() {
       this.$store.commit("department/setIsDialogCreateDepartment", true);
