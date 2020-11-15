@@ -68,7 +68,7 @@ export default {
         {
           icon: "mdi-account-tie",
           title: "Employee",
-          to: "/Employee",
+          to: "/employee",
         },
         {
           icon: "mdi-account-group",
@@ -78,7 +78,7 @@ export default {
         {
           icon: "mdi-feather",
           title: "Resume",
-          to: "/Resume",
+          to: "/resume",
         },
         {
           icon: "mdi-sprout",

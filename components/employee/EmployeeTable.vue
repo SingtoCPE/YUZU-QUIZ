@@ -3,26 +3,29 @@
     :headers="headers"
     :items="employeeList"
     class="elevation-1"
-    item-key="id"
+    item-key="employee_id"
+    v-model="selected"
+    show-select
   >
     <template v-slot:top>
-      <table-header />
+      <employee-table-header />
     </template>
 
     <template v-slot:body="{ items }">
-      <table-body :items="items" />
+      <employee-table-body :items="items" />
     </template>
   </v-data-table>
 </template>
 <script>
 import { mapState } from "vuex";
-import TableHeader from "@/components/employee/TableHeader.vue";
-import TableBody from "@/components/employee/TableBody.vue";
+import EmployeeTableHeader from "@/components/employee/EmployeeTableHeader.vue";
+import EmployeeTableBody from "@/components/employee/EmployeeTableBody.vue";
 export default {
-  name: "CustomerTable",
-  components: { TableHeader, TableBody },
+  name: "EmployeeTable",
+  components: { EmployeeTableHeader, EmployeeTableBody },
   data() {
     return {
+      selected: [],
       headers: [
         {
           text: "ID",

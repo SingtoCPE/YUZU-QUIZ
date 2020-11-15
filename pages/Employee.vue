@@ -1,17 +1,18 @@
 <template>
   <div>
-    <Table />
+    <employee-table />
   </div>
 </template>
 
 <script>
-import Table from "../components/employee/Table";
+import EmployeeTable from "../components/employee/EmployeeTable";
 export default {
+  name: "Employee",
   components: {
-    Table,
+    EmployeeTable,
   },
   mounted() {
-    this.$store.dispatch("employee/getEmployee", null, { root: true });
+    this.$store.dispatch("employee/getEmployee");
   },
 };
 </script>

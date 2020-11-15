@@ -20,7 +20,7 @@
 </template>
 <script>
 export default {
-  name: "inspire",
+  name: "Resume",
   data() {
     return {
       countSizeImg: 450,
@@ -28,7 +28,7 @@ export default {
   },
   methods: {
     addSizeImg() {
-      if (this.countSizeImg == 800) {
+      if (this.countSizeImg == 1000) {
         this.countSizeImg += 0;
       } else {
         this.countSizeImg += 50;

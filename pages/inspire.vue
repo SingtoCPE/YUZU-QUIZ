@@ -35,10 +35,18 @@ export default {
   },
   methods: {
     addImg() {
-      this.countImg += 1;
+      if (this.countImg == 36) {
+        this.countImg += 0;
+      } else {
+        this.countImg += 1;
+      }
     },
     reduceImg() {
-      this.countImg -= 1;
+      if (this.countImg == 1) {
+        this.countImg -= 0;
+      } else {
+        this.countImg -= 1;
+      }
     },
     addSizeImg() {
       if (this.countSizeImg == 12) {

@@ -1,7 +1,8 @@
 <template>
-  <div>Home</div>
+  <div>this is dashboard</div>
 </template>
-
 <script>
-export default {};
+export default {
+  name: "Dashboard",
+};
 </script>
