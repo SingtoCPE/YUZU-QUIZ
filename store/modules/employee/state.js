@@ -4,6 +4,5 @@ const state = {
     idEmployeeUpdate: null,
     isDialogCreateEmployee: false,
     isDialogUpdateEmployee: false,
-    isDialogAlert: false,
 }
 export default state;

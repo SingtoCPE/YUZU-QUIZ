@@ -1,6 +1,6 @@
 <template>
   <v-dialog
-    v-model="isDialogCreateEmployee"
+    v-model="isDialogCreateDepartment"
     width="650px"
     persistent
     :retain-focus="false"
@@ -8,29 +8,25 @@
     <form @submit.prevent="onSubmit">
       <v-card>
         <v-card-title class="blue-grey lighten-3 text-uppercase"
-          >Create Employee List</v-card-title
+          >Create Department List</v-card-title
         >
         <v-card-subtitle class="mt-3">
-          Employee information
+          Department information
           <v-divider />
         </v-card-subtitle>
 
         <v-card-text>
-          <employee-form
+          <department-form
             :is-clear-input="isClearInput"
-            @employee-input-change="employeeInputChange"
+            @department-input-change="departmentInputChange"
             @reset-is-clear-input="resetIsClearInput"
           />
         </v-card-text>
 
         <v-card-actions>
           <v-spacer />
-          <v-btn id="add-button" color="primary" dark type="submit"
-            >Submit</v-btn
-          >
-          <v-btn @click="clearInput" name="close-button" color="red" dark
-            >Close</v-btn
-          >
+          <v-btn color="primary" dark type="submit">Submit</v-btn>
+          <v-btn @click="clearInput" color="red" dark>Close</v-btn>
         </v-card-actions>
       </v-card>
     </form>
@@ -38,29 +34,36 @@
 </template>
 <script>
 import { mapState } from "vuex";
-import EmployeeForm from "../components/employee/EmployeeForm";
+import DepartmentForm from "../components/department/DepartmentForm";
 export default {
-  name: "EmployeeCreateContainer",
+  name: "DepartmentCreateContainer",
+  components: {
+    DepartmentForm,
+  },
   data: () => ({
-    employeePayload: [],
     isClearInput: false,
+    departmentPayload: {},
   }),
   computed: mapState({
-    isDialogCreateEmployee: (state) => state.employee.isDialogCreateEmployee,
+    isDialogCreateDepartment: (state) =>
+      state.department.isDialogCreateDepartment,
   }),
   methods: {
-    employeeInputChange(employeeDataList) {
-      this.employeePayload = employeeDataList;
+    departmentInputChange(departmentDataList) {
+      this.departmentPayload = departmentDataList;
     },
     async onSubmit() {
-      this.createEmployee();
+      this.createDepartment();
       this.clearInput();
     },
-    createEmployee() {
-      this.$store.dispatch("employee/createEmployee", this.employeePayload);
+    createDepartment() {
+      this.$store.dispatch(
+        "department/createDepartment",
+        this.departmentPayload
+      );
     },
     closeDialog() {
-      this.$store.commit("employee/setIsDialogCreateEmployee", false);
+      this.$store.commit("department/setIsDialogCreateDepartment", false);
     },
     clearInput() {
       this.isClearInput = true;

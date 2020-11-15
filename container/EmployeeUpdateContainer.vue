@@ -77,8 +77,8 @@ export default {
         this.employeeUpdateItem.department = this.employeeItem.department_id;
       }
     },
-    employeeInputChange(EmployeeDataList) {
-      this.employeePayload = EmployeeDataList;
+    employeeInputChange(employeeDataList) {
+      this.employeePayload = employeeDataList;
     },
     updateEmployee() {
       this.$store.dispatch("employee/updateEmployee", this.employeePayload);

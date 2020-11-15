@@ -9,12 +9,13 @@ const actions = {
         commit('setDepartmentList', data.map(data => data))
     },
 
-    async createDepartment({_, dispatch}, department_id){
+    async createDepartment({_, dispatch}, {departmentName, departmentCode}){
         await axios({
             method: 'post',
             url: 'http://localhost:3001/department/create',
             data: {
-                department_id,
+                department_name: departmentName,
+                department_code: departmentCode
             },
         })
         dispatch('getDepartment')

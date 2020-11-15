@@ -14,9 +14,6 @@ const mutations = {
     setIsDialogUpdateEmployee(state, isDialogUpdateEmployee){
         state.isDialogUpdateEmployee = isDialogUpdateEmployee
     },
-    setIsDialogAlert(state, isDialogAlert){
-        state.isDialogAlert = isDialogAlert
-    }
 }
 
 export default mutations;

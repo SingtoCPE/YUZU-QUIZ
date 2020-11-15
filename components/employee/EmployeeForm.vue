@@ -2,7 +2,7 @@
   <div class="px-3">
     <v-text-field
       v-model="employeeInput.employeeName"
-      prepend-inner-icon="mdi-alpha-f-circle"
+      prepend-inner-icon="mdi-alpha-n-circle"
       clearable
       dense
       label="Name *"
@@ -90,7 +90,6 @@ export default {
       { value: "D05", departmentName: "CEO" },
       { value: "D06", departmentName: "System Analysis" },
     ],
-    test: 0,
   }),
   watch: {
     employeeInput: {

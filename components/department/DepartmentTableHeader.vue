@@ -6,14 +6,27 @@
     outlined
   >
     <v-card-actions>
-      <v-btn dark color="green" width="115px">
+      <v-btn
+        @click="openDialogCreateDepartment"
+        dark
+        color="green"
+        width="115px"
+      >
         <v-icon class="mr-1"> mdi-plus-circle </v-icon>New
       </v-btn>
     </v-card-actions>
+    <department-create-container />
   </v-card>
 </template>
 <script>
+import DepartmentCreateContainer from "@/container/DepartmentCreateContainer.vue";
 export default {
   name: "DepartmentTableHeader",
+  components: { DepartmentCreateContainer },
+  methods: {
+    openDialogCreateDepartment() {
+      this.$store.commit("department/setIsDialogCreateDepartment", true);
+    },
+  },
 };
 </script>
