@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="mt-1">
     <div>
       <v-btn dark @click="addImg"><v-icon>mdi-plus</v-icon></v-btn>
       <v-btn dark @click="reduceImg"><v-icon>mdi-minus</v-icon></v-btn>
@@ -33,7 +33,7 @@ export default {
   data() {
     return {
       countImg: 3,
-      countSizeImg: 4,
+      countSizeImg: 4
     };
   },
   methods: {
@@ -67,7 +67,7 @@ export default {
     },
     randomImg() {
       this.$router.go(0);
-    },
-  },
+    }
+  }
 };
 </script>

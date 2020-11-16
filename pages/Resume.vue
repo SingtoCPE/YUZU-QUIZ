@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="mt-1">
     <v-btn dark @click="addSizeImg"><v-icon>mdi-magnify-plus</v-icon></v-btn>
     <v-btn dark @click="reduceSizeImg"
       ><v-icon>mdi-magnify-minus</v-icon></v-btn
@@ -25,7 +25,7 @@ export default {
   name: "Resume",
   data() {
     return {
-      countSizeImg: 450,
+      countSizeImg: 450
     };
   },
   methods: {
@@ -42,9 +42,7 @@ export default {
       } else {
         this.countSizeImg -= 50;
       }
-    },
-  },
+    }
+  }
 };
 </script>
-
-
