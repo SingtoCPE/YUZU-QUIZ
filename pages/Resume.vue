@@ -4,7 +4,7 @@
     <v-btn dark @click="reduceSizeImg"
       ><v-icon>mdi-magnify-minus</v-icon></v-btn
     >
-    <div class="container d-flex justify-center align-center">
+    <div class="d-flex justify-center align-center">
       <v-row class="d-flex justify-center align-center pt-1">
         <v-col class="d-flex justify-center align-center">
           <v-card elevation="10">

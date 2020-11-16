@@ -1,6 +1,11 @@
 <template>
-  <div class="container d-flex justify-center">
-    <v-card class="" width="750">
+  <v-card
+    class="d-flex align-center justify-center"
+    color="white"
+    height="650"
+    flat
+  >
+    <v-card elevation="10" class="pa-2" outlined tile>
       <h1 class="text-center">สิ่งที่ผมทำตามโจทย์กำหนดไม่ได้</h1>
       <v-divider />
       <ul class="my-2">
@@ -19,10 +24,10 @@
         ที่หยิบยื่นโอกาสมาให้ผมครับ **
       </h3>
     </v-card>
-  </div>
+  </v-card>
 </template>
 <script>
 export default {
-  name: "Dashboard",
+  name: "Dashboard"
 };
 </script>
