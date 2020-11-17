@@ -1,9 +1,9 @@
 <template>
   <div class="mt-1">
     <v-btn dark @click="addSizeImg"><v-icon>mdi-magnify-plus</v-icon></v-btn>
-    <v-btn dark @click="reduceSizeImg"
-      ><v-icon>mdi-magnify-minus</v-icon></v-btn
-    >
+    <v-btn dark @click="reduceSizeImg">
+      <v-icon>mdi-magnify-minus</v-icon>
+    </v-btn>
     <div :size="size" class="flex-wrap">
       <v-row class="pt-1">
         <v-col class="d-flex justify-center align-center">

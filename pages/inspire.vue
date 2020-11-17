@@ -4,12 +4,12 @@
       <v-btn dark @click="addImg"><v-icon>mdi-plus</v-icon></v-btn>
       <v-btn dark @click="reduceImg"><v-icon>mdi-minus</v-icon></v-btn>
       <v-btn dark @click="addSizeImg"><v-icon>mdi-magnify-plus</v-icon></v-btn>
-      <v-btn dark @click="reduceSizeImg"
-        ><v-icon>mdi-magnify-minus</v-icon></v-btn
-      >
+      <v-btn dark @click="reduceSizeImg">
+        <v-icon>mdi-magnify-minus</v-icon>
+      </v-btn>
       <v-btn dark @click="randomImg"><v-icon>mdi-reload</v-icon></v-btn>
     </div>
-    <v-row>
+    <v-row class="pt-1">
       <v-col
         v-for="n in countImg"
         :key="n"
