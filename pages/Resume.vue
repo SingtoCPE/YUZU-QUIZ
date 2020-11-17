@@ -4,15 +4,15 @@
     <v-btn dark @click="reduceSizeImg"
       ><v-icon>mdi-magnify-minus</v-icon></v-btn
     >
-    <div :height="height" class="flex-wrap">
+    <div :size="size" class="flex-wrap">
       <v-row class="pt-1">
         <v-col class="d-flex justify-center align-center">
-          <v-card elevation="10">
+          <v-card elevation="10" width="auto">
             <img src="@/assets/1.png" alt="" :width="countSizeImg" />
           </v-card>
         </v-col>
         <v-col class="d-flex justify-center align-center">
-          <v-card elevation="10">
+          <v-card elevation="10" width="auto">
             <img src="@/assets/2.png" alt="" :width="countSizeImg" />
           </v-card>
         </v-col>
@@ -29,14 +29,14 @@ export default {
     };
   },
   computed: {
-    height() {
+    size() {
       switch (this.$vuetify.breakpoint.name) {
         case "xs":
-          return (this.countSizeImg = 201);
+          return (this.countSizeImg = 350);
         case "sm":
-          return (this.countSizeImg = 450);
+          return (this.countSizeImg = 625);
         case "md":
-          return (this.countSizeImg = 450);
+          return (this.countSizeImg = 850);
         case "lg":
           return (this.countSizeImg = 450);
         case "xl":
