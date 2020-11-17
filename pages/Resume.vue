@@ -32,7 +32,7 @@ export default {
     height() {
       switch (this.$vuetify.breakpoint.name) {
         case "xs":
-          return (this.countSizeImg = 200);
+          return (this.countSizeImg = 201);
         case "sm":
           return (this.countSizeImg = 450);
         case "md":
