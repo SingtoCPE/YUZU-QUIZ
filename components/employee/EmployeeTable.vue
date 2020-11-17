@@ -32,55 +32,55 @@ export default {
           align: "left",
           sortable: false,
           value: "id",
-          class: "grey lighten-3",
+          class: "grey lighten-3"
         },
         {
           text: "Name",
           align: "left",
           sortable: false,
           value: "employee_name",
-          class: "grey lighten-3",
+          class: "grey lighten-3"
         },
         {
           text: "Email",
           align: "left",
           sortable: false,
           value: "email",
-          class: "grey lighten-3",
+          class: "grey lighten-3"
         },
         {
           text: "Address",
           align: "left",
           sortable: false,
           value: "address",
-          class: "grey lighten-3",
+          class: "grey lighten-3"
         },
         {
           text: "Phone",
           align: "left",
           sortable: false,
           value: "phone",
-          class: "grey lighten-3",
+          class: "grey lighten-3"
         },
         {
           text: "Department",
           align: "left",
           sortable: false,
           value: "department",
-          class: "grey lighten-3",
+          class: "grey lighten-3"
         },
         {
           text: "Actions",
           align: "center",
           sortable: false,
           value: "department",
-          class: "grey lighten-3",
-        },
-      ],
+          class: "grey lighten-3"
+        }
+      ]
     };
   },
   computed: mapState({
-    employeeList: (state) => state.employee.employeeList,
-  }),
+    employeeList: state => state.employee.employeeList
+  })
 };
 </script>

@@ -84,12 +84,12 @@ import { ValidationProvider } from "vee-validate/dist/vee-validate.full";
 export default {
   name: "EmployeeForm",
   components: {
-    ValidationProvider: ValidationProvider,
+    ValidationProvider: ValidationProvider
   },
   props: {
     isClearInput: {
       type: Boolean,
-      default: false,
+      default: false
     },
     employeeUpdateItem: {
       type: Object,
@@ -98,9 +98,9 @@ export default {
         email: "",
         address: "",
         phone: "",
-        department: "",
-      }),
-    },
+        department: ""
+      })
+    }
   },
   data: () => ({
     employeeInput: {
@@ -108,7 +108,7 @@ export default {
       email: "",
       address: "",
       phone: "",
-      department: "",
+      department: ""
     },
     departmentItems: [
       { value: "D01", departmentName: "Front-End" },
@@ -116,8 +116,8 @@ export default {
       { value: "D03", departmentName: "Maid" },
       { value: "D04", departmentName: "UX/UI Design" },
       { value: "D05", departmentName: "CEO" },
-      { value: "D06", departmentName: "System Analysis" },
-    ],
+      { value: "D06", departmentName: "System Analysis" }
+    ]
   }),
   watch: {
     employeeInput: {
@@ -125,7 +125,7 @@ export default {
         this.$emit("employee-input-change", value);
       },
       immediate: true,
-      deep: true,
+      deep: true
     },
     isClearInput: {
       handler(value) {
@@ -134,8 +134,8 @@ export default {
           this.$emit("reset-is-clear-input");
         }
       },
-      immediate: true,
-    },
+      immediate: true
+    }
   },
   created() {
     this.setEmployeeInput();
@@ -156,7 +156,7 @@ export default {
         this.employeeInput.phone = this.employeeUpdateItem.phone;
         this.employeeInput.departmentItems = this.employeeUpdateItem.department;
       }
-    },
-  },
+    }
+  }
 };
 </script>

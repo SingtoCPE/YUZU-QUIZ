@@ -1,4 +1,3 @@
-
 <template>
   <tbody>
     <tr v-for="(item, index) in items" :key="item.employee_id">
@@ -67,22 +66,22 @@ export default {
   props: {
     items: {
       type: Array,
-      default: () => [],
-    },
+      default: () => []
+    }
   },
   data: () => ({
     idEmployeeDelete: null,
     employeeItem: "",
     nameEmployeeDelete: "",
-    isDialogAlert: false,
+    isDialogAlert: false
   }),
   computed: mapState({
-    employeeList: (state) => state.employee.employeeList,
+    employeeList: state => state.employee.employeeList
   }),
   methods: {
     openDialogUpdateEmployee(employeeId) {
       this.employeeItem = this.employeeList.find(
-        (employeeItem) => employeeItem.employee_id === employeeId
+        employeeItem => employeeItem.employee_id === employeeId
       );
       this.$store.commit("employee/setEmployeeItem", this.employeeItem);
       this.$store.commit("employee/setIdEmployeeUpdate", employeeId);
@@ -99,7 +98,7 @@ export default {
     },
     cancelDelete() {
       this.isDialogAlert = false;
-    },
-  },
+    }
+  }
 };
 </script>

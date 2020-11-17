@@ -48,13 +48,13 @@ export default {
       email: "",
       address: "",
       phone: "",
-      department: "",
-    },
+      department: ""
+    }
   }),
   computed: mapState({
-    isDialogUpdateEmployee: (state) => state.employee.isDialogUpdateEmployee,
-    idEmployeeUpdate: (state) => state.employee.idEmployeeUpdate,
-    employeeItem: (state) => state.employee.employeeItem,
+    isDialogUpdateEmployee: state => state.employee.isDialogUpdateEmployee,
+    idEmployeeUpdate: state => state.employee.idEmployeeUpdate,
+    employeeItem: state => state.employee.employeeItem
   }),
   watch: {
     isDialogUpdateEmployee: {
@@ -63,8 +63,8 @@ export default {
           this.setInput();
         }
       },
-      immediate: true,
-    },
+      immediate: true
+    }
   },
   methods: {
     setInput() {
@@ -85,7 +85,7 @@ export default {
     setEmployeeItem() {
       this.employeePayload = {
         ...this.employeePayload,
-        employee_id: this.idEmployeeUpdate,
+        employee_id: this.idEmployeeUpdate
       };
     },
     onSubmit() {
@@ -95,7 +95,7 @@ export default {
     },
     closeDialog() {
       this.$store.commit("employee/setIsDialogUpdateEmployee", false);
-    },
-  },
+    }
+  }
 };
 </script>

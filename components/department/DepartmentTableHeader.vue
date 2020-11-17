@@ -28,7 +28,7 @@ export default {
   methods: {
     openDialogCreateDepartment() {
       this.$store.commit("department/setIsDialogCreateDepartment", true);
-    },
-  },
+    }
+  }
 };
 </script>

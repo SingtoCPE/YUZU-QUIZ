@@ -9,12 +9,12 @@ export default {
   props: {
     textButton: {
       type: String,
-      default: "",
+      default: ""
     },
     colorButton: {
       type: String,
-      default: "",
-    },
-  },
+      default: ""
+    }
+  }
 };
 </script>

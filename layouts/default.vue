@@ -63,34 +63,34 @@ export default {
         {
           icon: "mdi-chart-bubble",
           title: "Dashboard",
-          to: "/",
+          to: "/"
         },
         {
           icon: "mdi-account-tie",
           title: "Employee",
-          to: "/employee",
+          to: "/employee"
         },
         {
           icon: "mdi-account-group",
           title: "Department",
-          to: "/department",
+          to: "/department"
         },
         {
           icon: "mdi-feather",
           title: "Resume",
-          to: "/resume",
+          to: "/resume"
         },
         {
           icon: "mdi-sprout",
           title: "Inspire",
-          to: "/inspire",
-        },
+          to: "/inspire"
+        }
       ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: "Yuzu Digital Solution",
+      title: "Yuzu Digital Solution"
     };
-  },
+  }
 };
 </script>

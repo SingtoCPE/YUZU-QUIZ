@@ -24,12 +24,12 @@ export default {
   name: "EmployeeTableHeader",
   components: {
     EmployeeCreateContainer,
-    EmployeeUpdateContainer,
+    EmployeeUpdateContainer
   },
   methods: {
     openDialogCreateEmployee() {
       this.$store.commit("employee/setIsDialogCreateEmployee", true);
-    },
-  },
+    }
+  }
 };
 </script>

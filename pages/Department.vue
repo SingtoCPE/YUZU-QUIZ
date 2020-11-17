@@ -9,10 +9,10 @@ import DepartmentTable from "../components/department/DepartmentTable";
 export default {
   name: "Department",
   components: {
-    DepartmentTable,
+    DepartmentTable
   },
   mounted() {
     this.$store.dispatch("department/getDepartment");
-  },
+  }
 };
 </script>

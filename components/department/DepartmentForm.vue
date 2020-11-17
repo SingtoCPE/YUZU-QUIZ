@@ -45,14 +45,14 @@
 <script>
 import { ValidationProvider } from "vee-validate/dist/vee-validate.full";
 export default {
-  name: 'DepartmentForm',
+  name: "DepartmentForm",
   components: {
-    ValidationProvider: ValidationProvider,
+    ValidationProvider: ValidationProvider
   },
   props: {
     isClearInput: {
       type: Boolean,
-      default: false,
+      default: false
     },
     departmentUpdateItem: {
       type: Object,
@@ -61,15 +61,15 @@ export default {
         email: "",
         address: "",
         phone: "",
-        department: "",
-      }),
-    },
+        department: ""
+      })
+    }
   },
   data: () => ({
     departmentInput: {
       departmentName: "",
-      departmentCode: "",
-    },
+      departmentCode: ""
+    }
   }),
   watch: {
     departmentInput: {
@@ -77,7 +77,7 @@ export default {
         this.$emit("department-input-change", value);
       },
       immediate: true,
-      deep: true,
+      deep: true
     },
     isClearInput: {
       handler(value) {
@@ -86,8 +86,8 @@ export default {
           this.$emit("reset-is-clear-input");
         }
       },
-      immediate: true,
-    },
+      immediate: true
+    }
   },
   created() {
     this.setDepartmentInput();
@@ -102,7 +102,7 @@ export default {
         this.departmentInput.departmentName = this.departmentUpdateItem.departmentName;
         this.departmentInput.departmentCode = this.departmentUpdateItem.departmentCode;
       }
-    },
-  },
+    }
+  }
 };
 </script>

@@ -45,14 +45,14 @@ import { ValidationObserver } from "vee-validate/dist/vee-validate.full";
 export default {
   name: "EmployeeCreateContainer",
   components: {
-    ValidationObserver: ValidationObserver,
+    ValidationObserver: ValidationObserver
   },
   data: () => ({
     employeePayload: [],
-    isClearInput: false,
+    isClearInput: false
   }),
   computed: mapState({
-    isDialogCreateEmployee: (state) => state.employee.isDialogCreateEmployee,
+    isDialogCreateEmployee: state => state.employee.isDialogCreateEmployee
   }),
   methods: {
     employeeInputChange(employeeDataList) {
@@ -81,7 +81,7 @@ export default {
     },
     resetIsClearInput() {
       this.isClearInput = false;
-    },
-  },
+    }
+  }
 };
 </script>

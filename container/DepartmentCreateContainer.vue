@@ -42,15 +42,14 @@ export default {
   name: "DepartmentCreateContainer",
   components: {
     DepartmentForm,
-    ValidationObserver: ValidationObserver,
+    ValidationObserver: ValidationObserver
   },
   data: () => ({
     isClearInput: false,
-    departmentPayload: {},
+    departmentPayload: {}
   }),
   computed: mapState({
-    isDialogCreateDepartment: (state) =>
-      state.department.isDialogCreateDepartment,
+    isDialogCreateDepartment: state => state.department.isDialogCreateDepartment
   }),
   methods: {
     departmentInputChange(departmentDataList) {
@@ -82,7 +81,7 @@ export default {
     },
     resetIsClearInput() {
       this.isClearInput = false;
-    },
-  },
+    }
+  }
 };
 </script>

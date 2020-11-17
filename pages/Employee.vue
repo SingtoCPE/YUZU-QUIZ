@@ -9,10 +9,10 @@ import EmployeeTable from "../components/employee/EmployeeTable";
 export default {
   name: "Employee",
   components: {
-    EmployeeTable,
+    EmployeeTable
   },
   mounted() {
     this.$store.dispatch("employee/getEmployee");
-  },
+  }
 };
 </script>

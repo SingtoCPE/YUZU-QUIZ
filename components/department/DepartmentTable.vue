@@ -30,34 +30,34 @@ export default {
           align: "left",
           sortable: false,
           value: "id",
-          class: "grey lighten-3",
+          class: "grey lighten-3"
         },
         {
           text: "Department Code",
           align: "left",
           sortable: false,
           value: "department_id",
-          class: "grey lighten-3",
+          class: "grey lighten-3"
         },
         {
           text: "Department Name",
           align: "left",
           sortable: false,
           value: "department_name",
-          class: "grey lighten-3",
+          class: "grey lighten-3"
         },
         {
           text: "Actions",
           align: "center",
           sortable: false,
           value: "department",
-          class: "grey lighten-3",
-        },
-      ],
+          class: "grey lighten-3"
+        }
+      ]
     };
   },
   computed: mapState({
-    departmentList: (state) => state.department.departmentList,
-  }),
+    departmentList: state => state.department.departmentList
+  })
 };
 </script>
