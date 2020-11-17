@@ -10,7 +10,6 @@ const mutations = {
   },
   setIsDialogCreateEmployee(state, isDialogCreateEmployee) {
     state.isDialogCreateEmployee = isDialogCreateEmployee;
-    console.log(state.isDialogCreateEmployee);
   },
   setIsDialogUpdateEmployee(state, isDialogUpdateEmployee) {
     state.isDialogUpdateEmployee = isDialogUpdateEmployee;
