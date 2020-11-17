@@ -36,22 +36,22 @@
 import { mapState } from "vuex";
 import DepartmentForm from "../components/department/DepartmentForm";
 export default {
-  name: "DepartmentCreateContainer",
+  name: "DepartmentUpdateContainer",
   components: {
-    DepartmentForm,
+    DepartmentForm
   },
   data: () => ({
     departmentPayload: {},
     departmentUpdateItem: {
       departmentName: "",
-      departmentCode: "",
-    },
+      departmentCode: ""
+    }
   }),
   computed: mapState({
-    isDialogUpdateDepartment: (state) =>
+    isDialogUpdateDepartment: state =>
       state.department.isDialogUpdateDepartment,
-    idDepartmentUpdate: (state) => state.department.idDepartmentUpdate,
-    departmentItem: (state) => state.department.departmentItem,
+    idDepartmentUpdate: state => state.department.idDepartmentUpdate,
+    departmentItem: state => state.department.departmentItem
   }),
   watch: {
     isDialogUpdateDepartment: {
@@ -60,8 +60,8 @@ export default {
           this.setInput();
         }
       },
-      immediate: true,
-    },
+      immediate: true
+    }
   },
   methods: {
     setInput() {
@@ -82,7 +82,7 @@ export default {
     setDepartmentItem() {
       this.departmentPayload = {
         ...this.departmentPayload,
-        department_id: this.idDepartmentUpdate,
+        department_id: this.idDepartmentUpdate
       };
     },
     async onSubmit() {
@@ -92,7 +92,7 @@ export default {
     },
     closeDialog() {
       this.$store.commit("department/setIsDialogUpdateDepartment", false);
-    },
-  },
+    }
+  }
 };
 </script>

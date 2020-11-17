@@ -45,6 +45,7 @@
 <script>
 import { ValidationProvider } from "vee-validate/dist/vee-validate.full";
 export default {
+  name: 'DepartmentForm',
   components: {
     ValidationProvider: ValidationProvider,
   },
