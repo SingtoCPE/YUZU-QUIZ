@@ -4,8 +4,8 @@
     <v-btn dark @click="reduceSizeImg"
       ><v-icon>mdi-magnify-minus</v-icon></v-btn
     >
-    <div class="d-flex justify-center align-center">
-      <v-row class="d-flex justify-center align-center pt-1">
+    <div :height="height" class="flex-wrap">
+      <v-row class="pt-1">
         <v-col class="d-flex justify-center align-center">
           <v-card elevation="10">
             <img src="@/assets/1.png" alt="" :width="countSizeImg" />
@@ -27,6 +27,22 @@ export default {
     return {
       countSizeImg: 450
     };
+  },
+  computed: {
+    height() {
+      switch (this.$vuetify.breakpoint.name) {
+        case "xs":
+          return (this.countSizeImg = 200);
+        case "sm":
+          return (this.countSizeImg = 450);
+        case "md":
+          return (this.countSizeImg = 450);
+        case "lg":
+          return (this.countSizeImg = 450);
+        case "xl":
+          return (this.countSizeImg = 450);
+      }
+    }
   },
   methods: {
     addSizeImg() {
