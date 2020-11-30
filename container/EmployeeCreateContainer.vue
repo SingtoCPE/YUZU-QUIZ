@@ -59,7 +59,7 @@ export default {
       this.employeePayload = employeeDataList;
     },
     async onSubmit() {
-      const isValid = await this.$refs.departmentForm.validate();
+      const isValid = await this.$refs.employeeForm.validate();
       if (isValid) {
         this.createEmployee();
         this.clearInput();
